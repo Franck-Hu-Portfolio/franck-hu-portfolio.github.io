@@ -6,8 +6,7 @@ Selecteur[s]{
 
 h1{
   padding: 0px;
-  background : white
-  color: aqua; 
+  background : white color; 
   font-size: 35px;
   font-family: Arial, Helvetica, sans-serif;
   display: block;
