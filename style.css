@@ -38,7 +38,21 @@ p{
     text-align: left;
 }
 
-.Typographie Noto Sans.html{ 
-    display:grid;
+
+
+.grid > div {
+    background-color: grey;
+    border: solid 1px
+}
+
+.grid {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+}
+
+.child {
+    grid-column-start: 2;
+    grid-row-start: 1;
 }
