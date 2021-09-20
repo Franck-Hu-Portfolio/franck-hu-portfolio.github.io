@@ -15,7 +15,7 @@ h1{
 
 body{
     margin: 40px;
-    
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h2{
@@ -38,8 +38,6 @@ p{
     text-align: left;
 }
 
-
-
 .grid > div {
     background-color: grey;
     border: solid 1px
@@ -55,4 +53,34 @@ p{
 .child {
     grid-column-start: 2;
     grid-row-start: 1;
+}
+
+.Info {
+    text-decoration: black
+    color; CurrentColor;
+}
+
+.index {
+    display: grid;
+}
+
+.affiches {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+}
+
+.photographies {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+}
+
+.Penser-Classer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
 }
