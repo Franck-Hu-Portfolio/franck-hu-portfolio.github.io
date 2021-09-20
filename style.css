@@ -68,7 +68,7 @@ p{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-column-gap: 50px;
+    grid-column-gap: 30px;
 }
 
 .photographies {
@@ -79,6 +79,13 @@ p{
 }
 
 .Penser-Classer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+}
+
+.coffret {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
