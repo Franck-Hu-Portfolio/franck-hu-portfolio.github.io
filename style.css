@@ -71,6 +71,12 @@ p{
     grid-column-gap: 30px;
 }
 
+@media (min-width:300px) {
+    .affiches,
+    grid-template-columns: repeat(2, 200px);
+    gap:8px: 
+}
+
 .photographies {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -101,4 +107,11 @@ p{
 
 .child1{
     grid-column-start: 2;
+}
+
+.multimédia{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 30px;
 }
