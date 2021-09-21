@@ -57,6 +57,14 @@ a:active{
     color: black;
 }
 
+.A-propos {
+    color: black;
+}
+
+.accueil {
+    color: black;
+}
+
 .affiches {
     display: grid;
     grid-template-columns: 1fr;
