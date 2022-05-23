@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip 2</title>
+    <style>
+
+        audio{
+            width:100%;
+        }
+        svg{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <body style="background-color:#000000;">
+    </body>
+    <audio src="Source/Meydn-SynthwaveVibe.mp3" controls></audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="DrawSVGPlugin.min.js"></script>
+    <script>
+    /* CODE poUr le chargement du SVG */
+    fetch("Source/Clip.svg")
+        .then(response => response.text())
+        .then(svg => {
+            document.body.insertAdjacentHTML("beforeend", svg)
+            anim(); // on peut créer l'animation 
+    });
+
+    /* pour controler LE SON dans le HTML*/
+    const audio = document.querySelector("audio");
+    
+    /* Notre timeline */
+    const tl = gsap.timeline();
+    gsap.registerPlugin(DrawSVGPlugin);
+
+    /* function pour créer l'animation APRèS le chargement du SVG */
+    function anim(){
+        // réglages
+        let hours = new Date().getHours();
+        let varition ="nuit";
+
+        if(hours === 21){
+                varition = "midi";
+        }
+        if(hours === 11){
+                alert('café');
+        }
+
+
+        tl.pause();
+        tl.set("#Clip>*",{opacity:1},4);
+        tl.set("SynthwaveIntro>*", {opacity:1},0);
+        tl.set("EllipseBleu>*", {opacity:1},4);
+        
+        tl.set("#films>*", { transformOrigin: "center center", opacity: 0 },0);
+        tl.set("#dessin>*", { transformOrigin: "center center", opacity: 0 },0);
+        tl.to('#svg', {opacity:0, duration:audio.duration},);
+        tl.to('#EllipseBleu', {rotate:360, duration:20,transformOrigin:'center center',repeat:10});
+
+        
+        // boom croissant
+        tl.from('#SynthwaveIntro path',{opacity:1, duration:1.5}, 0);
+                tl.to("#SynthwaveIntro", { opacity:0, ease:"none", duration:1}, 2);
+
+        tl.from('#Synthwave path',{rotate:"random(-360,360,1)",transformOrigin:'center center',duration:4},3);
+                tl.to("#Synthwave", { scale: 2.5, ease:"none", duration:10.0}, 3);
+                tl.to("#Synthwave", { opacity: 1, ease:"none", duration:2}, 3);
+                tl.to("#Synthwave", { opacity: 0, ease:"none", duration:1}, 8);
+
+        tl.from('#Starwars path',{rotate:"random(-300,300,1)",transformOrigin:'center center',duration:2},10);
+                tl.to("#Starwars", { scale: 2.5, ease:"none", duration:5}, 10);
+                tl.to("#Starwars", { opacity: 1, ease:"none", duration:2.5}, 10);
+                tl.to("#Starwars", { opacity: 0, ease:"none", duration:2}, 13);
+
+        tl.from('#Akira path',{rotate:"random(-180,180,1)",transformOrigin:'center center',duration:2},14);
+                tl.to("#Akira", { scale: 3, ease:"none", duration:5}, 14);
+                tl.to("#Akira", { opacity: 1, ease:"none", duration:2.5}, 14);
+                tl.to("#Akira", { opacity: 0, ease:"none", duration:2}, 17);
+
+        tl.from('#Aliens path',{rotate:"random(150,50,1)",transformOrigin:'center center',duration:2},18);
+                tl.to("#Aliens", { scale: 3, ease:"none", duration:5}, 18);
+                tl.to("#Aliens", { opacity: 1, ease:"none", duration:2.5}, 18);
+                tl.to("#Aliens", { opacity: 0, ease:"none", duration:2}, 21);
+
+        tl.from('#Dune path',{rotate:"random(350,350,1)",transformOrigin:'center center',duration:2},22);
+                tl.to("#Dune", { scale: 3, ease:"none", duration:5}, 22);
+                tl.to("#Dune", { opacity: 1, ease:"none", duration:2.5}, 22);
+                tl.to("#Dune", { opacity: 0, ease:"none", duration:2}, 25);
+
+        tl.from('#Gremlins path',{rotate:"random(300,300,1)",transformOrigin:'center center',duration:2},26);
+                tl.to("#Gremlins", { scale: 3, ease:"none", duration:5}, 26);
+                tl.to("#Gremlins", { opacity: 1, ease:"none", duration:2.5}, 26);
+                tl.to("#Gremlins", { opacity: 0, ease:"none", duration:2}, 29);
+
+        tl.from('#Retourverslefutur path',{rotate:"random(290,290,1)",transformOrigin:'center center',duration:1.5},30);
+                tl.to("#Retourverslefutur", { scale: 2, ease:"none", duration:5}, 30);
+                tl.to("#Retourverslefutur", { opacity: 1, ease:"none", duration:2.5}, 30);
+                tl.to("#Retourverslefutur", { opacity: 0, ease:"none", duration:1}, 34);
+
+        tl.from('#Robocop path',{rotate:"random(-150,-150,1)",transformOrigin:'center center',duration:2},35);
+                tl.to("#Robocop", { scale: 3, ease:"none", duration:5}, 35);
+                tl.to("#Robocop", { opacity: 1, ease:"none", duration:2.5}, 35);
+                tl.to("#Robocop", { opacity: 0, ease:"none", duration:2}, 38);
+
+        tl.from('#Bladerunner path',{rotate:"random(200,200,1)",transformOrigin:'center center',duration:1.5},39);
+                tl.to("#Bladerunner", { scale: 2, ease:"none", duration:5}, 39);
+                tl.to("#Bladerunner", { opacity: 1, ease:"none", duration:2.5}, 39);
+                tl.to("#Bladerunner", { opacity: 0, ease:"none", duration:2}, 42);
+
+        tl.from('#Terminator path',{rotate:"random(320,320,1)",transformOrigin:'center center',duration:2},43);
+                tl.to("#Terminator", { scale: 2, ease:"none", duration:5}, 43);
+                tl.to("#Terminator", { opacity: 1, ease:"none", duration:2.5}, 43);
+                tl.to("#Terminator", { opacity: 0, ease:"none", duration:2}, 46);
+
+        tl.from('#Tron path',{rotate:"random(350,350,1)",transformOrigin:'center center',duration:2},47);
+                tl.to("#Tron", { scale: 3, ease:"none", duration:5}, 47);
+                tl.to("#Tron", { opacity: 1, ease:"none", duration:2.5}, 47);
+                tl.to("#Tron", { opacity: 0, ease:"none", duration:2}, 50);
+
+        tl.from('#ET path',{rotate:"random(-200,-200,1)",transformOrigin:'center center',duration:2},51);
+                tl.to("#ET", { scale: 3, ease:"none", duration:5}, 51);
+                tl.to("#ET", { opacity: 1, ease:"none", duration:2.5}, 51);
+                tl.to("#ET", { opacity: 0, ease:"none", duration:2}, 54);
+
+
+
+        tl.from('#Starwarsdessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},10);
+        tl.to("#Starwarsdessin", { scale: 1.2, ease:"none", duration:5}, 10);
+        tl.to("#Starwarsdessin", { opacity: 1, ease:"none", duration:2.5}, 10);
+        tl.to("#Starwarsdessin", { opacity: 0, ease:"none", duration:2}, 13);
+
+        tl.set("#dessin>*",{opacity:0}, 10);
+        tl.to('#dessin #Starwarsdessin',{opacity:1},12);
+        tl.fromTo('#dessin #Starwarsdessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:6},10);
+        
+
+        tl.from('#Akiradessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:3},14);
+        tl.to("#Akiradessin", { scale: 1.2, ease:"none", duration:5}, 14);
+        tl.to("#Akiradessin", { opacity: 1, ease:"none", duration:2.5}, 14);
+        tl.to("#Akiradessin", { opacity: 0, ease:"none", duration:2}, 17);
+
+        tl.set("#dessin>*",{opacity:0}, 14);
+        tl.to('#dessin #Akiradessin',{opacity:1},16);
+        tl.fromTo('#dessin #Akiradessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:3},14);
+
+
+        tl.from('#Aliensdessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},18);
+        tl.to("#Aliensdessin", { scale: 1.2, ease:"none", duration:5}, 18);
+        tl.to("#Aliensdessin", { opacity: 1, ease:"none", duration:2.5}, 18);
+        tl.to("#Aliensdessin", { opacity: 0, ease:"none", duration:2}, 21);
+
+        tl.set("#dessin>*",{opacity:0}, 18);
+        tl.to('#dessin #Aliensdessin',{opacity:1},20);
+        tl.fromTo('#dessin #Aliensdessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:3},18);
+
+
+        tl.from('#Dunedessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},22);
+        tl.to("#Dunedessin", { scale: 1.2, ease:"none", duration:5}, 22);
+        tl.to("#Dunedessin", { opacity: 1, ease:"none", duration:2.5}, 22);
+        tl.to("#Dunedessin", { opacity: 0, ease:"none", duration:2}, 25);
+
+        tl.set("#dessin>*",{opacity:0}, 22);
+        tl.to('#dessin #Dunedessin',{opacity:1},23);
+        tl.fromTo('#dessin #Dunedessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:8},22);
+
+
+        tl.from('#Gremlinsdessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},26);
+        tl.to("#Gremlinsdessin", { scale: 1.2, ease:"none", duration:5}, 26);
+        tl.to("#Gremlinsdessin", { opacity: 1, ease:"none", duration:2.5}, 26);
+        tl.to("#Gremlinsdessin", { opacity: 0, ease:"none", duration:2}, 29);
+
+        tl.set("#dessin>*",{opacity:0}, 26);
+        tl.to('#dessin #Gremlinsdessin',{opacity:1},27);
+        tl.fromTo('#dessin #Gremlinsdessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:6},26);
+
+
+        tl.from('#Retoursverslefuturdessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:1.5},30);
+        tl.to("#Retoursverslefuturdessin", { scale: 1.2, ease:"none", duration:5}, 30);
+        tl.to("#Retoursverslefuturdessin", { opacity: 1, ease:"none", duration:2.5}, 30);
+        tl.to("#Retoursverslefuturdessin", { opacity: 0, ease:"none", duration:1}, 34);
+
+        tl.set("#dessin>*",{opacity:0}, 30);
+        tl.to('#dessin #Retoursverslefuturdessin',{opacity:1},31);
+        tl.fromTo('#dessin #Retoursverslefuturdessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:4},30);
+
+
+        tl.from('#Robocopdessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},35);
+        tl.to("#Robocopdessin", { scale: 1.2, ease:"none", duration:5}, 35);
+        tl.to("#Robocopdessin", { opacity: 1, ease:"none", duration:2.5}, 35);
+        tl.to("#Robocopdessin", { opacity: 0, ease:"none", duration:2}, 38);
+
+        tl.set("#dessin>*",{opacity:0}, 35);
+        tl.to('#dessin #Robocopdessin',{opacity:1},36);
+        tl.fromTo('#dessin #Robocopdessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:3},35);
+
+
+        tl.from('#Bladerunnerdessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:1.5},39);
+        tl.to("#Bladerunnerdessin", { scale: 1.2, ease:"none", duration:5}, 39);
+        tl.to("#Bladerunnerdessin", { opacity: 1, ease:"none", duration:2.5}, 39);
+        tl.to("#Bladerunnerdessin", { opacity: 0, ease:"none", duration:2}, 42);
+
+        tl.set("#dessin>*",{opacity:0}, 39);
+        tl.to('#dessin #Bladerunnerdessin',{opacity:1},40);
+        tl.fromTo('#dessin #Bladerunnerdessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:3.5},39);
+
+
+        tl.from('#Terminatordessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},43);
+        tl.to("#Terminatordessin", { scale: 1.2, ease:"none", duration:5}, 43);
+        tl.to("#Terminatordessin", { opacity: 1, ease:"none", duration:2.5}, 43);
+        tl.to("#Terminatordessin", { opacity: 0, ease:"none", duration:2}, 46);
+
+        tl.set("#dessin>*",{opacity:0}, 43);
+        tl.to('#dessin #Terminatordessin',{opacity:1},44);
+        tl.fromTo('#dessin #Terminatordessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:3.5},43);
+
+
+        tl.from('#Trondessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},47);
+        tl.to("#Trondessin", { scale: 1.2, ease:"none", duration:5}, 47);
+        tl.to("#Trondessin", { opacity: 1, ease:"none", duration:2.5}, 47);
+        tl.to("#Trondessin", { opacity: 0, ease:"none", duration:2}, 50);
+
+        tl.set("#dessin>*",{opacity:0}, 47);
+        tl.to('#dessin #Trondessin',{opacity:1},48);
+        tl.fromTo('#dessin #Trondessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:3.5},47);
+
+        tl.from('#ETdessin path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},51);
+        tl.to("#ETdessin", { scale: 1.2, ease:"none", duration:5}, 51);
+        tl.to("#ETdessin", { opacity: 1, ease:"none", duration:2.5}, 51);
+        tl.to("#ETdessin", { opacity: 0, ease:"none", duration:2}, 54);
+
+        tl.set("#dessin>*",{opacity:0}, 51);
+        tl.to('#dessin #ETdessin',{opacity:1},52);
+        tl.fromTo('#dessin #ETdessin path',{drawSVG:"0% 0%"},{drawSVG:"0% 100%", duration:3.5},51);
+
+
+        tl.from('#credit path',{rotate:"random(0,0)",transformOrigin:'center center',duration:2},55);
+        tl.to("#credit", { scale: 1.2, ease:"none", duration:5}, 55);
+        tl.to("#credit", { opacity: 1, ease:"none", duration:2.5}, 58);
+        tl.to("#credit", { opacity: 0, ease:"none", duration:2}, 65);
+
+
+        // tl.fromTo("#Synthwave", { scale: 0.1,opacity:0.5}, { scale: 3,opacity:1, duration:10}, 0);
+        // tl.to("#Synthwave", { scale: 1, duration:40.0}, 1.5);
+        // tl.to("#Synthwave", { opacity:0.0 }, 6.0);
+
+        // // boom croissant
+        // tl.to("#", { scale: 2, duration:0.5}, 2.0);
+        // tl.to("#", { scale: 2, duration:0.5}, 1.5);
+        // // boom décroissant
+        // tl.to("#", { scale: 1, duration:0.5}, 2.5);
+        // tl.to("#", { scale: 1, duration:0.5}, 2.0);
+    }
+
+
+
+
+    /* OUTILS pour la lecture */
+    audio.addEventListener("play", function() {
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur).play();
+    });
+
+    audio.addEventListener("pause", function() {
+        tl.pause();
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur);
+    });
+
+    // seeked
+    audio.addEventListener("seeking", function(e) {
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur).pause();
+    });
+
+
+
+    </script>
+</body>
+</html>
